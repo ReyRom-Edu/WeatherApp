@@ -60,7 +60,7 @@ namespace WeatherApp.Extensions
                 if (wind.TryGetProperty("speed", out JsonElement speed))
                     weather.WindSpeed = speed.GetDouble();
                 if (wind.TryGetProperty("deg", out JsonElement deg))
-                    weather.WindDirection = deg.GetInt32();
+                    weather.WindDirection = deg.GetDouble();
             }
 
             if (root.TryGetProperty("clouds", out JsonElement clouds))

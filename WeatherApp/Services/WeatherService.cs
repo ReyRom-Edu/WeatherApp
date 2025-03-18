@@ -25,6 +25,7 @@ namespace WeatherApp.Services
 
         public async Task<Weather> GetWeatherByCityNameAsync(string cityName)
         {
+            // Use options while deserializing JSON
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -42,6 +43,7 @@ namespace WeatherApp.Services
 
         public async Task<Weather> GetWeatherByGeoAsync(double longitude, double latitude)
         {
+            // Use options while deserializing JSON
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -57,8 +59,9 @@ namespace WeatherApp.Services
             throw new NotImplementedException();
         }
 
-        public async Task<City> GetGeoByCityNameAsync()
+        public async Task<City> GetGeoByCityNameAsync(string cityName)
         {
+            // Use options while deserializing JSON
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true

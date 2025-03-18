@@ -12,7 +12,7 @@ namespace WeatherApp.Models
         public double Humidity { get; set; }
         public double Pressure { get; set; }
         public double WindSpeed { get; set; }
-        public int WindDirection { get; set; }
+        public double WindDirection { get; set; }
         public double Cloudiness { get; set; }
         public double Rain { get; set; }
         public double Snow { get; set; }
