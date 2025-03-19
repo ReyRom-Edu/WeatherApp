@@ -30,7 +30,7 @@ namespace WeatherApp.Extensions
                     weather.City.Longitude = lon.GetDouble();
 
                 if (coord.TryGetProperty("lat", out JsonElement lat))
-                    weather.City.Longitude = lat.GetDouble();
+                    weather.City.Latitude = lat.GetDouble();
             }
 
             if (root.TryGetProperty("weather", out JsonElement weatherArray) && weatherArray.GetArrayLength() > 0)

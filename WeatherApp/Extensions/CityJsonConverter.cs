@@ -41,7 +41,7 @@ namespace WeatherApp.Extensions
             }
             if (root.TryGetProperty("lon", out JsonElement lon))
             {
-                city.Latitude = lon.GetDouble();
+                city.Longitude = lon.GetDouble();
             }
             if (root.TryGetProperty("country", out JsonElement country))
             {
