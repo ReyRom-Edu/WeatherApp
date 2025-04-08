@@ -2,19 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:WeatherApp.ViewModels"
-			 xmlns:m="clr-namespace:WeatherApp.Models"
+             xmlns:vm="using:WeatherApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="WeatherApp.Views.WeatherView"
-             x:DataType="vm:WeatherViewModel">
-    <UserControl.DataTemplates>
-		<DataTemplate DataType="m:Weather">
-			
-		</DataTemplate>
-    </UserControl.DataTemplates>
-
-	<Grid>
-		
-		
-	</Grid>
+             x:Class="WeatherApp.Views.MainView"
+			 x:DataType="vm:MainViewModel">
+	<ContentControl Content="{Binding CurrentPage}"/>
 </UserControl>

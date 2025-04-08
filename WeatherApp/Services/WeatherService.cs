@@ -25,54 +25,54 @@ namespace WeatherApp.Services
 
         public async Task<Weather> GetWeatherByCityNameAsync(string cityName)
         {
-            // Use options while deserializing JSON
+            // Опция, необходимая для корректной десериализации данных JSON из openweathermap
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
             options.Converters.Add(new WeatherJsonConverter());
 
-            // Call the weather API
+            // Вызовите API погоды, используя HttpClient
 
-            // Parse the response
+            // Десериализуйте ответ в объект Weather
 
-            // Return the weather object
+            // Верните объект Weather
 
             throw new NotImplementedException();
         }
 
         public async Task<Weather> GetWeatherByGeoAsync(double longitude, double latitude)
         {
-            // Use options while deserializing JSON
+            // Опция, необходимая для корректной десериализации данных JSON из openweathermap
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
             options.Converters.Add(new WeatherJsonConverter());
 
-            // Call the weather API
+            // Вызовите API погоды, используя HttpClient
 
-            // Parse the response
+            // Десериализуйте ответ в объект Weather
 
-            // Return the weather object
+            // Верните объект Weather
 
             throw new NotImplementedException();
         }
 
-        public async Task<City> GetGeoByCityNameAsync(string cityName)
+        public async Task<List<City>> GetGeoByCityNameAsync(string cityName, int limit=1)
         {
-            // Use options while deserializing JSON
+            // Опция, необходимая для корректной десериализации данных JSON из openweathermap
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             };
             options.Converters.Add(new CityJsonConverter());
 
-            // Call the weather API
+            // Вызовите географическое API, используя HttpClient
 
-            // Parse the response
+            // Десериализуйте ответ в список объектов City
 
-            // Return the weather object
+            // Верните список City
 
             throw new NotImplementedException();
         }

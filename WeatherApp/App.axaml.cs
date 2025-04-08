@@ -4,6 +4,7 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 using WeatherApp.Services;
 using WeatherApp.ViewModels;
 using WeatherApp.Views;
@@ -28,13 +29,17 @@ public partial class App : Application
         var services = new ServiceCollection();
 
         services.AddSingleton<WeatherViewModel>();
-        services.AddScoped<WeatherService>();
+        services.AddTransient<WeatherService>();
 
         Services = services.BuildServiceProvider();
 
 
+        Assembly assembly = Assembly.GetExecutingAssembly();
+
+        using var stream = assembly.GetManifestResourceStream("WeatherApp.appsettings.json");
+
         ConfigurationBuilder builder = new ConfigurationBuilder();
-        builder.AddJsonFile("appsettings.json");
+        builder.AddJsonStream(stream);
         Configuration = builder.Build();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -46,7 +51,7 @@ public partial class App : Application
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
-            singleViewPlatform.MainView = new WeatherView
+            singleViewPlatform.MainView = new MainView
             {
                 DataContext = new MainViewModel()
             };
